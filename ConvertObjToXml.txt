@@ -1,0 +1,7 @@
+public string ToXML(object lObj)
+    {
+        var stringwriter = new System.IO.StringWriter();
+        var serializer = new System.Xml.Serialization.XmlSerializer(lObj.GetType());
+        serializer.Serialize(stringwriter, lObj);
+        return stringwriter.ToString();
+    }
